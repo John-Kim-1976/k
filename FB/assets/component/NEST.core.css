@@ -1,0 +1,117 @@
+@-ms-viewport {
+ 	width: device-width;
+}
+
+html {
+	-ms-touch-action: auto;
+}
+
+body {
+	margin : 0 0;
+	
+/* 	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	-o-user-select:none;
+	user-select:none; */
+	
+	font-family:"helvetica neue", "roboto", "helvetica","sans-serif";
+}
+
+body>article {
+	position: absolute;
+	overflow: hidden;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+body>article>form>section {
+	overflow: hidden;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: absolute;
+}
+
+input[type=text],
+input[type=url],
+input[type=tel],
+input[type=number],
+input[type=color],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=time],
+textarea, select {
+    border: 1px solid #ccc;    
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	-o-user-select: text;
+	user-select: text;	
+}
+
+input[type=text]:focus,
+input[type=url]:focus,
+input[type=tel]:focus,
+input[type=number]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=date]:focus,
+input[type=time]:focus,
+textarea:focus {
+    background: #FFFFCC;	
+}
+
+input[type=checkbox],
+input[type=radio] {
+	width: 25px;
+	height: 25px;
+    background: #FFFFCC;
+    border: 1px solid #ccc;
+}
+
+input[type=text],
+input[type=url],
+input[type=tel],
+input[type=number],
+input[type=color],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=time],
+select:not([size]) {
+	height: 25px;
+}
+
+input:required:invalid, input:focus:invalid {
+    background-image: url(assets/images/invalid.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+input:required:valid {
+	background-image: url(assets/images/valid.png);
+	background-position: right top;
+	background-repeat: no-repeat;
+}
+
+a img {  
+	border: none;  
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+.alertify-text {
+	min-height: 38px;	
+}

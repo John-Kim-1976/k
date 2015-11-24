@@ -1,0 +1,20 @@
+/Users/john/Documents/devel/eclipse.j2xx.osx/android-sdk/build-tools/19.0.0/aapt package -v -f -m --auto-add-overlay  --extra-packages com.samples.FB  -I /Users/john/Documents/devel/eclipse.j2xx.osx/android-sdk/platforms/android-19/android.jar -M FB/AndroidManifest.xml  -S res -S res2  -J gen
+
+
+
+javac -target 1.6 -source 1.6 -cp ".:libs/*:/Users/john/Documents/devel/eclipse.j2xx.osx/android-sdk/platforms/android-19/android.jar" -d bin/classes   $(find ./gen/* | grep .java)
+
+javac -target 1.6 -source 1.6 -cp ".:libs/*:./bin/classes:/Users/john/Documents/devel/eclipse.j2xx.osx/android-sdk/platforms/android-19/android.jar" -d bin/classes   $(find ./src/* | grep .java)
+
+
+
+/Users/john/Documents/devel/eclipse.j2xx.osx/android-sdk/build-tools/19.0.0/dx --dex --output=bin/classes.dex bin/classes libs/classes.jar libs/gson-2.4.jar libs/support-v4-19.1.0.jar
+
+
+/Users/john/Documents/devel/eclipse.j2xx.osx/android-sdk/build-tools/19.0.0/aapt package -f -m --auto-add-overlay -J gen -I /Users/john/Documents/devel/eclipse.j2xx.osx/android-sdk/platforms/android-19/android.jar -M AndroidManifest.xml  -S res -S res2 -A assets -F bin/FB.apk bin
+
+
+jarsigner -tsa http://timestamp.comodoca.com/rfc3161 -sigalg SHA1withRSA -keystore android.keystore -storepass NEST__ -keypass NEST1234 bin/FB.apk NEST
+
+./zipalign 4 bin/FB.apk bin/FB-a.apk
+
