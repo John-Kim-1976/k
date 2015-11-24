@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x:Form id="main" xmlns:x3="http://basic.component.nest.nxstinc.com" xmlns:x="http://component.nest.nxstinc.com" xmlns:x1="http://facebook.component.nest.nxstinc.com" xmlns:x2="http://layout.component.nest.nxstinc.com">
+  <script></script>
+  <onInit>
+    <target ref="login1" method="validate"/>
+  </onInit>
+  <x1:Login id="login1">
+    <appName>NEST</appName>
+    <appId>1637059179915281</appId>
+    <appSecret>a4b6c9c71543803901dd5e22d2c46373</appSecret>
+  </x1:Login>
+  <x:Header id="header1">
+    <text>Facebook</text>
+  </x:Header>
+  <x2:Panel id="panel1">
+    <x:Button id="button1">
+      <text>Facebook Login</text>
+      <size><![CDATA[{width : "100%"}]]></size>
+      <onTap>
+        <target ref="login1" method="login"/>
+      </onTap>
+    </x:Button>
+  </x2:Panel>
+  <x2:Panel id="panel2"/>
+  <x2:Panel id="panel3">
+    <display>block</display>
+    <x3:Line id="line1"/>
+    <x:Image id="image1">
+      <dataImage>picture</dataImage>
+      <dataStore>login1</dataStore>
+    </x:Image>
+    <x3:Line id="line2"/>
+    <x:Label id="label1">
+      <dataStore>login1</dataStore>
+      <dataText>email</dataText>
+    </x:Label>
+    <x3:Line id="line3"/>
+    <x:Label id="label2">
+      <dataStore>login1</dataStore>
+      <dataText>name</dataText>
+    </x:Label>
+  </x2:Panel>
+  <x:Button id="button2">
+    <text>Facebook Logout</text>
+    <size><![CDATA[{width : "100%"}]]></size>
+    <onTap>
+      <target ref="login1" method="logout"/>
+    </onTap>
+  </x:Button>
+</x:Form>

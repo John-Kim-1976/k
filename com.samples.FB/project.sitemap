@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemap version="2.0" xmlns:form="http://form.nestpia.com" xmlns:link="http://link.nestpia.com">
+  <position id="main" x="20" y="20"/>
+  <form:home>main</form:home>
+  <form:start>main</form:start>
+</sitemap>
